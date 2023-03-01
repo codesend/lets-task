@@ -12,6 +12,7 @@
   --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 
   --color-purple: #9d0191;
+  --color-green:  #46cf4d;
   --color-orange: #ff7722;
 
   --color-primary: #007bff;
@@ -475,14 +476,14 @@ a:hover {
   height: 4rem;
   font-size: 1.8rem;
   cursor: pointer;
-  background-color: var(--color-purple);
+  background-color: var(--color-primary);
   color: #fff;
   border: none;
   transition: all 0.3s;
 }
 
 .task-form button:hover {
-  background-color: var(--color-primary);
+  background-color: var(--color-green);
 }
 
 .task {
