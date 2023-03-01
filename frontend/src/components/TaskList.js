@@ -12,7 +12,7 @@ const TaskList = () => {
     const [isLoading, setIsLoading] = useState(false)
     const [formData, setFormData] = useState({
         name: "",
-        completed: "false"
+        completed: "false",
     })
     const {name} = formData;
 
@@ -48,7 +48,17 @@ const TaskList = () => {
             toast.success("Task added");
             setFormData({ ...formData, name: ""});
         } catch (error) {
-            toast.error(error);
+            toast.error(error.message);
+        }
+    };
+
+    const deleteTask = async (id) => {
+        try {
+            await axios.delete(`${URL}/api/tasks/${id}`)
+            getTasks()
+
+        } catch (error) {
+            toast.error(error.message)
         }
     };
 
@@ -75,10 +85,11 @@ const TaskList = () => {
             <p>No tasks exist! Please add a task.</p>
             ) : (
             <>
-            {tasks.map(Task, index => {
-                return (
-                    <Task />
-                )
+            {tasks.map((task, index) => {
+                return <Task key={task._id} 
+                task={task} 
+                index={index} 
+                deleteTask={deleteTask}/>
                 })}
             </>
             )
