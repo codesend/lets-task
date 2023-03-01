@@ -2,9 +2,10 @@
   "name": "lets-task",
   "version": "1.0.0",
   "description": "A Minimalist Task Manager ( Built on Reactjs )⚡️",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node backend/server.js",
+    "backend": "nodemon backend/server.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,9 @@
   },
   "homepage": "https://github.com/codesend/lets-task#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.0",
+    "nodemon": "^2.0.20"
   }
 }
